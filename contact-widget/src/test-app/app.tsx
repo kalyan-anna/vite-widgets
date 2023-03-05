@@ -1,4 +1,3 @@
-import './app.css';
 import { GetInTouch } from '../lib';
 import './style.css';
 

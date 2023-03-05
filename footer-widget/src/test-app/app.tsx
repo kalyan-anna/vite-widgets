@@ -1,5 +1,5 @@
 import { Footer } from '../lib/Footer';
-import './app.css';
+import './style.css';
 
 export function App() {
   return <Footer />;
