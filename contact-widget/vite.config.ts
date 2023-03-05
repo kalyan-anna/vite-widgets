@@ -7,10 +7,18 @@ export default defineConfig({
   publicDir: false,
   build: {
     lib: {
-      entry: 'src/main.ts',
+      entry: 'src/main.tsx',
       name: 'contact-widget',
-      fileName: 'contact-widget',
+      fileName: 'contact-widget.min',
       formats: ['es'],
+    },
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'style.css') return 'contact-widget.css';
+          return assetInfo.name;
+        },
+      },
     },
   },
 });
