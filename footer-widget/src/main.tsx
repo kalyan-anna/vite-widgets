@@ -1,7 +1,8 @@
 import { render } from 'preact';
-import { App } from './test-app/app';
+import { App } from './lib/App';
 
 render(
   <App />,
-  document.getElementById('footer-widget-placeholder') as HTMLElement
+  document.getElementById('footer-widget-holder') as HTMLElement,
+  document.getElementById('footer-widget-holder') as HTMLElement
 );
