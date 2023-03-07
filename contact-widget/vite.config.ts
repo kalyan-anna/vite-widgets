@@ -2,13 +2,13 @@ import { defineConfig, UserConfig } from 'vite';
 import preact from '@preact/preset-vite';
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }): UserConfig => {
+export default defineConfig((): UserConfig => {
   return {
     plugins: [preact()],
     publicDir: false,
     build: {
       lib: {
-        entry: mode === 'production' ? 'src/main.tsx' : 'src/test-app/main.tsx',
+        entry: 'src/main.tsx',
         name: 'contact-widget',
         fileName: 'contact-widget.min',
         formats: ['es'],

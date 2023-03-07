@@ -3,13 +3,12 @@ import preact from '@preact/preset-vite';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }): UserConfig => {
-  const isProduction = mode === 'production';
   return {
     plugins: [preact()],
-    publicDir: isProduction ? '' : 'public',
+    publicDir: mode === 'production' ? '' : 'public',
     build: {
       lib: {
-        entry: isProduction ? 'src/main.tsx' : 'src/test-app/main.tsx',
+        entry: 'src/main.tsx',
         name: 'footer-widget',
         fileName: 'footer-widget.min',
         formats: ['es'],
